@@ -2,8 +2,12 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   runApp(MyApp());
 }
 
@@ -54,7 +58,10 @@ class MyApp extends StatelessWidget {
                     Icons.phone,
                     color: Colors.teal,
                   ),
-                  title: Text("+91 6393842272",style: TextStyle(color: Colors.teal),),
+                  title: Text(
+                    "+91 6393842272",
+                    style: TextStyle(color: Colors.teal),
+                  ),
                 ),
               ),
               SizedBox(
@@ -65,13 +72,18 @@ class MyApp extends StatelessWidget {
                 color: Colors.white,
                 child: ListTile(
                   leading: Icon(
-                      Icons.email,
-                      color: Colors.teal,
-                    ),
-                  title: Text("aniketjaiswal255@gmail.com",style: TextStyle(color: Colors.teal),),
+                    Icons.email,
+                    color: Colors.teal,
+                  ),
+                  title: Text(
+                    "aniketjaiswal255@gmail.com",
+                    style: TextStyle(color: Colors.teal),
+                  ),
                 ),
               ),
-              SizedBox(height: 50,),
+              SizedBox(
+                height: 50,
+              ),
             ],
           ),
         ),
